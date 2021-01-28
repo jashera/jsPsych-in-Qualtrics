@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ishihara Task</title>
+  <script src="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/jspsych.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/plugins/jspsych-image-keyboard-response.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/css/jspsych.css"></link>
+  <script src="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/ishihara_main.js"></script>
+</head>
+
+<body>
+
+  <!-- COPY PASTE TO QUALTRICS FROM HERE -->`
+
+  <!-- Change 3: Adding extra scripts for Qualtrics -->
+  <!-- Use JSDELIVR to get the files from a GitHub repository
+   https://cdn.jsdelivr.net/gh/<github-username>/<repository-name>/<specific folder or file> -->
+  <link href="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+
+  <div>
+    <span style="font-size: 24px;">
+      <br><br>
+      If you are seeing this message for <span style="color: rgb(255, 0, 0);"><b>more than 5 minutes</b></span>,<br>
+      please screen-capture this screen and send the image to us.
+      <br><br>
+      <span style="font-size: 28px;">We are very sorry for the inconvenience.</span>
+    </span>
+  </div>
+
+  <!-- Change 2: Adding `display_stage` CSS and Div -->
+  <style>
+    #display_stage_background {
+      width: 100vw;
+      background-color: white;
+      z-index: -1;
+    }
+
+    #display_stage {
+      position: fixed;
+      left: 1vw;
+      top: 1vh;
+      height: 98vh;
+      width: 98vw;
+      background-color: white;
+      box-shadow: 1px 1px 1px #999;
+      border-radius: 15px;
+      z-index: 0;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+  </style>
+  <!-- COPY PASTE TO QUALTRICS UP TO HERE -->
+
+  <div id='display_stage_background'></div>
+  <div id='display_stage'></div>
+</body>
+
+<script>
+  /*start experiment*/
+  jsPsych.init({
+  timeline: timeline,
+  preload_images: [repo_site + 'Images/Ish_1_12.png',repo_site + 'Images/Ish_2_8.png',
+    repo_site + 'Images/Ish_3_29.png', repo_site + 'Images/Ish_4_5.png', repo_site + 'Images/Ish_5_3.png', repo_site +'Images/Ish_6_15.png',
+    repo_site +'Images/Ish_7_74.png'],
+  on_finish: function(){jsPsych.data.displayData();}
+});
+</script>
+
+</html>

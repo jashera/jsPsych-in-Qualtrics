@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ishihara Task</title>
+  <!-- CHANGE 1: Using the GitHub-hosted files -->
+  <script src="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/jspsych.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/plugins/jspsych-image-keyboard-response.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jashera/jsPsych-in-Qualtrics/ishihara/jspsych/css/jspsych.css">
+  <!-- CHANGE 2: Loading the main experiment script in the same folder-->
+  <script src="ishihara_main.js"></script>
+</head>
+
+<body>
+</body>
+<script>
+  /*start experiment*/
+  jsPsych.init({
+  timeline: timeline,
+  preload_images: [repo_site + 'Images/Ish_1_12.png',repo_site + 'Images/Ish_2_8.png',
+    repo_site + 'Images/Ish_3_29.png', repo_site + 'Images/Ish_4_5.png', repo_site + 'Images/Ish_5_3.png', repo_site +'Images/Ish_6_15.png',
+    repo_site +'Images/Ish_7_74.png'],
+  on_finish: function(){jsPsych.data.displayData();}
+});
+</script>
+
+</html>
